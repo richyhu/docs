@@ -19,13 +19,13 @@ export default function DocPage() {
     return (
       <div className="flex min-h-screen">
         <Sidebar />
-        <main className="flex-1 flex items-center justify-center bg-indigo-50/30">
+        <main className="flex-1 flex items-center justify-center bg-slate-50/30">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-indigo-900 mb-2">文档未找到</h2>
-            <p className="text-indigo-400 mb-6">请从导航栏选择一篇文档</p>
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">文档未找到</h2>
+            <p className="text-slate-400 mb-6">请从导航栏选择一篇文档</p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-900 text-white rounded-xl hover:bg-indigo-800 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-700 transition-colors"
             >
               返回首页
             </Link>
@@ -47,22 +47,22 @@ export default function DocPage() {
       <Sidebar />
       <main className="flex-1 min-w-0 overflow-y-auto">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 py-8 lg:py-12" ref={contentRef}>
-          <div className="flex items-center gap-2 text-sm text-indigo-400 mb-6">
-            <Link to="/" className="hover:text-indigo-600 transition-colors">首页</Link>
+          <div className="flex items-center gap-2 text-sm text-slate-400 mb-6">
+            <Link to="/" className="hover:text-slate-600 transition-colors">首页</Link>
             <ChevronRight size={14} />
-            <span className="text-indigo-600">{category?.title}</span>
+            <span className="text-slate-600">{category?.title}</span>
             <ChevronRight size={14} />
-            <span className="text-indigo-900 font-medium">{article.title}</span>
+            <span className="text-slate-800 font-medium">{article.title}</span>
           </div>
           <DocContent content={article.content} />
-          <div className="mt-12 pt-8 border-t border-indigo-100 flex justify-between gap-4">
+          <div className="mt-12 pt-8 border-t border-slate-100 flex justify-between gap-4">
             {prevArticle ? (
               <Link
                 to={`/docs/${prevArticle.slug}`}
-                className="flex-1 p-4 rounded-xl border border-indigo-100 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all group"
+                className="flex-1 p-4 rounded-xl border border-slate-100 hover:border-slate-300 hover:bg-slate-50/50 transition-all group"
               >
-                <div className="text-xs text-indigo-400 mb-1">上一篇</div>
-                <div className="text-sm font-medium text-indigo-900 group-hover:text-indigo-700">
+                <div className="text-xs text-slate-400 mb-1">上一篇</div>
+                <div className="text-sm font-medium text-slate-800 group-hover:text-slate-600">
                   ← {prevArticle.title}
                 </div>
               </Link>
@@ -70,10 +70,10 @@ export default function DocPage() {
             {nextArticle ? (
               <Link
                 to={`/docs/${nextArticle.slug}`}
-                className="flex-1 p-4 rounded-xl border border-indigo-100 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all text-right group"
+                className="flex-1 p-4 rounded-xl border border-slate-100 hover:border-slate-300 hover:bg-slate-50/50 transition-all text-right group"
               >
-                <div className="text-xs text-indigo-400 mb-1">下一篇</div>
-                <div className="text-sm font-medium text-indigo-900 group-hover:text-indigo-700">
+                <div className="text-xs text-slate-400 mb-1">下一篇</div>
+                <div className="text-sm font-medium text-slate-800 group-hover:text-slate-600">
                   {nextArticle.title} →
                 </div>
               </Link>

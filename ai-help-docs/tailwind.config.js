@@ -9,8 +9,8 @@ export default {
     },
     extend: {
       colors: {
-        indigo: {
-          950: '#1e1b4b',
+        slate: {
+          950: '#0c1222',
         },
       },
       fontFamily: {

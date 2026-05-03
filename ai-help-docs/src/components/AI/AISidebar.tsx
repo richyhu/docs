@@ -50,31 +50,31 @@ export default function AISidebar() {
     return (
       <button
         onClick={openSidebar}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-30 bg-indigo-900 text-white p-3 rounded-l-xl shadow-lg hover:bg-indigo-800 transition-all hover:pr-4 group border border-indigo-700 border-r-0"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-30 bg-slate-800 text-white p-3 rounded-l-xl shadow-lg hover:bg-slate-700 transition-all hover:pr-4 group border border-slate-600 border-r-0"
         title="打开 AI 助手"
       >
-        <MessageSquare size={20} className="group-hover:text-amber-400 transition-colors" />
+        <MessageSquare size={20} className="group-hover:text-orange-400 transition-colors" />
       </button>
     )
   }
 
   return (
-    <aside className="w-[380px] shrink-0 h-screen sticky top-0 flex flex-col bg-white border-l border-indigo-100 shadow-xl">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-indigo-100 bg-gradient-to-r from-indigo-900 to-indigo-800">
+    <aside className="w-[380px] shrink-0 h-screen sticky top-0 flex flex-col bg-white border-l border-slate-100 shadow-xl">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-gradient-to-r from-slate-800 to-slate-700">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-amber-400/20 flex items-center justify-center">
-            <MessageSquare size={16} className="text-amber-400" />
+          <div className="w-8 h-8 rounded-lg bg-orange-400/20 flex items-center justify-center">
+            <MessageSquare size={16} className="text-orange-400" />
           </div>
           <div>
             <h3 className="text-white font-semibold text-sm">AI 助手</h3>
-            <p className="text-indigo-300 text-xs">基于当前文档回答</p>
+            <p className="text-slate-300 text-xs">基于当前文档回答</p>
           </div>
         </div>
         <div className="flex items-center gap-1">
           {activeConversationId && (
             <button
               onClick={handleClear}
-              className="p-1.5 text-indigo-300 hover:text-amber-400 transition-colors rounded-lg hover:bg-white/10"
+              className="p-1.5 text-slate-300 hover:text-orange-400 transition-colors rounded-lg hover:bg-white/10"
               title="清除对话"
             >
               <Trash2 size={16} />
@@ -82,7 +82,7 @@ export default function AISidebar() {
           )}
           <button
             onClick={toggleSidebar}
-            className="p-1.5 text-indigo-300 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+            className="p-1.5 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/10"
           >
             <X size={16} />
           </button>
@@ -92,11 +92,11 @@ export default function AISidebar() {
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {!activeConv || activeConv.messages.length === 0 ? (
           <div className="text-center py-12">
-            <div className="w-16 h-16 rounded-2xl bg-indigo-50 flex items-center justify-center mx-auto mb-4">
-              <MessageSquare size={28} className="text-indigo-300" />
+            <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mx-auto mb-4">
+              <MessageSquare size={28} className="text-slate-300" />
             </div>
-            <h4 className="text-indigo-900 font-semibold mb-2">AI 文档助手</h4>
-            <p className="text-indigo-400 text-sm mb-6 leading-relaxed">
+            <h4 className="text-slate-800 font-semibold mb-2">AI 文档助手</h4>
+            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
               我可以基于当前文档内容<br />回答您的问题
             </p>
             <div className="space-y-2">
@@ -108,7 +108,7 @@ export default function AISidebar() {
                     if (!activeConversationId) handleNewConversation(ctx)
                     sendMessage(q, ctx)
                   }}
-                  className="block w-full text-left text-sm px-4 py-2.5 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors"
+                  className="block w-full text-left text-sm px-4 py-2.5 rounded-xl bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors"
                 >
                   {q}
                 </button>
@@ -123,7 +123,7 @@ export default function AISidebar() {
         <div ref={messagesEndRef} />
       </div>
 
-      <div className="p-4 border-t border-indigo-100">
+      <div className="p-4 border-t border-slate-100">
         <div className="flex items-center gap-2">
           <input
             ref={inputRef}
@@ -132,7 +132,7 @@ export default function AISidebar() {
             onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="输入您的问题..."
-            className="flex-1 px-4 py-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-sm text-indigo-900 placeholder-indigo-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 focus:border-amber-400/40 transition-all"
+            className="flex-1 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-100 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40 focus:border-orange-400/40 transition-all"
             disabled={isLoading}
           />
           {isLoading ? (
@@ -147,7 +147,7 @@ export default function AISidebar() {
             <button
               onClick={handleSend}
               disabled={!input.trim()}
-              className="p-2.5 rounded-xl bg-indigo-900 text-white hover:bg-indigo-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="p-2.5 rounded-xl bg-slate-800 text-white hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <Send size={16} />
             </button>

@@ -34,7 +34,7 @@ export default function FloatingToolbar({ selectedText, position, pageContext, o
   return (
     <div
       data-floating-toolbar
-      className="fixed z-50 flex items-center gap-1 bg-white rounded-xl shadow-xl border border-indigo-100 p-1.5 animate-in fade-in duration-200"
+      className="fixed z-50 flex items-center gap-1 bg-white rounded-xl shadow-xl border border-slate-100 p-1.5 animate-in fade-in duration-200"
       style={{
         left: `${position.x}px`,
         top: `${position.y - 52}px`,
@@ -45,7 +45,7 @@ export default function FloatingToolbar({ selectedText, position, pageContext, o
         <button
           key={action.key}
           onClick={() => handleAction(action.prompt)}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-indigo-700 hover:bg-indigo-50 hover:text-indigo-900 transition-colors whitespace-nowrap"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-800 transition-colors whitespace-nowrap"
         >
           <action.icon size={14} />
           <span>{action.label}</span>
