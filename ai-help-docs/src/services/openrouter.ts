@@ -2,6 +2,7 @@ import type { ChatMessage } from "@/types"
 
 const API_URL = "https://openrouter.ai/api/v1/chat/completions"
 const MODEL = "z-ai/glm-4.5-air:free"
+const API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || ""
 
 interface StreamCallbacks {
   onChunk: (text: string) => void
@@ -19,6 +20,7 @@ export async function streamChat(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${API_KEY}`,
         "HTTP-Referer": window.location.origin,
         "X-Title": "AI Help Docs",
       },
